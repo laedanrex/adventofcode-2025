@@ -1,6 +1,7 @@
 package net.laedanrex.santa;
 
 import net.laedanrex.santa.day01.Counter;
+import net.laedanrex.santa.day02.IDValidator;
 
 import java.nio.file.Files;
 import java.time.LocalDateTime;
@@ -9,11 +10,19 @@ import java.time.LocalDateTime;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() throws Exception {
-        day01();
+        day02();
+    }
+
+    static void day02() throws Exception {
+        IDValidator validator = new IDValidator();
+        Files.lines(ResourcesUtils.getResourcePath("day02/input_01"))
+                .forEach(validator::addRanges);
+        validator.printAllInvalidIDS();
+        System.out.println("==========================");
+        System.out.println(validator.sumOfAllInvalid());
     }
 
     static void day01() throws Exception {
-
         Counter counter = new Counter();
         counter.printHeader();
         Files.lines(ResourcesUtils.getResourcePath("day01/input_2"))
@@ -23,8 +32,6 @@ public class Main {
                 });
         counter.printHeader();
         System.out.println(LocalDateTime.now());
-        //input 1 :  R36     |      93 |    6558 |    1135
-        //input 2 :  R36     |      93 |    6558 |    1135
     }
 
 }

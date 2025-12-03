@@ -13,7 +13,14 @@ import java.nio.file.Paths;
 public class ResourcesUtils {
 
     public static URL getResourceUrl(String fileName) {
-        return ResourcesUtils.class.getClassLoader().getResource(fileName);
+        if (fileName == null) {
+            throw new NullPointerException("RESSOURCE fileName is null");
+        }
+        URL url = ResourcesUtils.class.getClassLoader().getResource(fileName);
+        if (url == null) {
+            throw new NullPointerException("RESSOURCE not found : " + fileName);
+        }
+        return url;
     }
 
     public static URI getResourceUri(String fileName) throws URISyntaxException {

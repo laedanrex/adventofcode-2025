@@ -128,7 +128,7 @@ class CounterTest {
         Counter counter = new Counter(50);
 
         counter.printHeader();
-        Files.lines(ResourcesUtils.getResourcePath("day1/input_2_test"))
+        Files.lines(ResourcesUtils.getResourcePath("day01/input_2_test"))
                 .forEach(line -> {
                     counter.readLine(line);
                     counter.print();
