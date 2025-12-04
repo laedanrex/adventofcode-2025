@@ -3,6 +3,7 @@ package net.laedanrex.santa;
 import net.laedanrex.santa.day01.Counter;
 import net.laedanrex.santa.day02.IDValidator;
 import net.laedanrex.santa.day03.Banks;
+import net.laedanrex.santa.day04.PaperRollGrid;
 
 import java.nio.file.Files;
 import java.time.LocalDateTime;
@@ -11,7 +12,17 @@ import java.time.LocalDateTime;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() throws Exception {
-        day03();
+        day04();
+    }
+
+    static void day04() throws Exception {
+        PaperRollGrid paperRollGrid = new PaperRollGrid();
+        Files.lines(ResourcesUtils.getResourcePath("day04/input_01"))
+                .forEach(paperRollGrid::addLine);
+        do {
+            paperRollGrid.markAccessibleRolls();
+        } while (paperRollGrid.removeAccessibleRolls() > 0);
+        System.out.println(paperRollGrid.totalRollMarked);
     }
 
     static void day03() throws Exception {

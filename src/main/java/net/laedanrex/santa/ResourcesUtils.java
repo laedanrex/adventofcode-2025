@@ -1,11 +1,14 @@
 package net.laedanrex.santa;
 
 import lombok.experimental.UtilityClass;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -33,6 +36,10 @@ public class ResourcesUtils {
 
     public static File getResourceFile(String fileName) throws URISyntaxException {
         return new File(getResourceUri(fileName));
+    }
+
+    public static String getResourceString(String fileName) throws URISyntaxException, IOException {
+        return Files.readString(getResourcePath(fileName));
     }
 
 }
