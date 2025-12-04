@@ -2,6 +2,7 @@ package net.laedanrex.santa;
 
 import net.laedanrex.santa.day01.Counter;
 import net.laedanrex.santa.day02.IDValidator;
+import net.laedanrex.santa.day03.Banks;
 
 import java.nio.file.Files;
 import java.time.LocalDateTime;
@@ -10,7 +11,15 @@ import java.time.LocalDateTime;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() throws Exception {
-        day02();
+        day03();
+    }
+
+    static void day03() throws Exception {
+        Banks banks = new Banks(12);
+        Files.lines(ResourcesUtils.getResourcePath("day03/input_01"))
+                .forEach(banks::addBatteries);
+
+        System.out.println(banks.getBestJoltageSum());
     }
 
     static void day02() throws Exception {
