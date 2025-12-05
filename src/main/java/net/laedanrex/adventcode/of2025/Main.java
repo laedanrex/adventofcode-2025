@@ -1,8 +1,8 @@
 package net.laedanrex.adventcode.of2025;
 
-import net.laedanrex.adventcode.of2025.day01.Counter;
+import net.laedanrex.adventcode.of2025.day01.SafeClicCounter;
 import net.laedanrex.adventcode.of2025.day02.InvalidIDRangesContainer;
-import net.laedanrex.adventcode.of2025.day03.Banks;
+import net.laedanrex.adventcode.of2025.day03.BatteriesBanks;
 import net.laedanrex.adventcode.of2025.day04.PaperRollGrid;
 import net.laedanrex.adventcode.of2025.day05.FreshIDRangesContainer;
 
@@ -47,11 +47,11 @@ public class Main {
     }
 
     static void day03() throws Exception {
-        Banks banks = new Banks(12);
+        BatteriesBanks batteriesBanks = new BatteriesBanks(12);
         Files.lines(ResourcesUtils.getResourcePath("day03/input_01"))
-                .forEach(banks::addBatteries);
+                .forEach(batteriesBanks::addBatteries);
 
-        System.out.println(banks.getBestJoltageSum());
+        System.out.println(batteriesBanks.getBestJoltageSum());
     }
 
     static void day02() throws Exception {
@@ -64,14 +64,14 @@ public class Main {
     }
 
     static void day01() throws Exception {
-        Counter counter = new Counter();
-        counter.printHeader();
+        SafeClicCounter safeClicCounter = new SafeClicCounter();
+        safeClicCounter.printHeader();
         Files.lines(ResourcesUtils.getResourcePath("day01/input_2"))
                 .forEach(line -> {
-                    counter.readLine(line);
-                    counter.print();
+                    safeClicCounter.readLine(line);
+                    safeClicCounter.print();
                 });
-        counter.printHeader();
+        safeClicCounter.printHeader();
         System.out.println(LocalDateTime.now());
     }
 

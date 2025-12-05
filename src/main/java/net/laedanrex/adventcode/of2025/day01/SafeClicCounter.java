@@ -1,13 +1,13 @@
 package net.laedanrex.adventcode.of2025.day01;
 
-public class Counter {
+public class SafeClicCounter {
 
 
-    public Counter() {
+    public SafeClicCounter() {
         this(50);
     }
 
-    public Counter(int initial) {
+    public SafeClicCounter(int initial) {
         this.numberInInterval = initial;
     }
 

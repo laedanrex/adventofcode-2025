@@ -6,16 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Banks {
+public class BatteriesBanks {
 
     Integer joltageSize;
 
 
-    public Banks() {
+    public BatteriesBanks() {
         this(2);
     }
 
-    public Banks(Integer joltageSize) {
+    public BatteriesBanks(Integer joltageSize) {
         this.joltageSize = joltageSize;
     }
 
@@ -67,7 +67,7 @@ public class Banks {
 
 
     public long getBestJoltageSum() {
-        return bestJoltage.stream().mapToLong(Banks::batteriesToJoltage)
+        return bestJoltage.stream().mapToLong(BatteriesBanks::batteriesToJoltage)
                 .sum();
     }
 
