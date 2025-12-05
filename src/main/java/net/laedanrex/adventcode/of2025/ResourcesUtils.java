@@ -1,7 +1,6 @@
-package net.laedanrex.santa;
+package net.laedanrex.adventcode.of2025;
 
 import lombok.experimental.UtilityClass;
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.IOException;

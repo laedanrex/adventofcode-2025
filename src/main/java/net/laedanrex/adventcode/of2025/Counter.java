@@ -1,4 +1,4 @@
-package net.laedanrex.santa.day01;
+package net.laedanrex.adventcode.of2025.day01;
 
 public class Counter {
 

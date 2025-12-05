@@ -1,4 +1,4 @@
-package net.laedanrex.santa.day04;
+package net.laedanrex.adventcode.of2025.day04;
 
 import lombok.Getter;
 

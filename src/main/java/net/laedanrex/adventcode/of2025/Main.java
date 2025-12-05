@@ -1,10 +1,10 @@
-package net.laedanrex.santa;
+package net.laedanrex.adventcode.of2025;
 
-import net.laedanrex.santa.day01.Counter;
-import net.laedanrex.santa.day02.InvalidIDRangesContainer;
-import net.laedanrex.santa.day03.Banks;
-import net.laedanrex.santa.day04.PaperRollGrid;
-import net.laedanrex.santa.day05.FreshIDRangesContainer;
+import net.laedanrex.adventcode.of2025.day01.Counter;
+import net.laedanrex.adventcode.of2025.day02.InvalidIDRangesContainer;
+import net.laedanrex.adventcode.of2025.day03.Banks;
+import net.laedanrex.adventcode.of2025.day04.PaperRollGrid;
+import net.laedanrex.adventcode.of2025.day05.FreshIDRangesContainer;
 
 import java.nio.file.Files;
 import java.time.LocalDateTime;

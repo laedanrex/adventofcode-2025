@@ -1,4 +1,4 @@
-package net.laedanrex.santa.day05;
+package net.laedanrex.adventcode.of2025.day05;
 
 import lombok.extern.java.Log;
 

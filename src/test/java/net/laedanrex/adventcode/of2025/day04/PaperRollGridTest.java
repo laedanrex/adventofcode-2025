@@ -1,6 +1,6 @@
-package net.laedanrex.santa.day04;
+package net.laedanrex.adventcode.of2025.day04;
 
-import net.laedanrex.santa.ResourcesUtils;
+import net.laedanrex.adventcode.of2025.ResourcesUtils;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Files;
