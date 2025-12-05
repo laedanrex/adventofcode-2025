@@ -4,15 +4,36 @@ import net.laedanrex.santa.day01.Counter;
 import net.laedanrex.santa.day02.InvalidIDRangesContainer;
 import net.laedanrex.santa.day03.Banks;
 import net.laedanrex.santa.day04.PaperRollGrid;
+import net.laedanrex.santa.day05.FreshIDRangesContainer;
 
 import java.nio.file.Files;
 import java.time.LocalDateTime;
+import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() throws Exception {
-        day04();
+        day05();
+    }
+
+    static void day05() throws Exception {
+        FreshIDRangesContainer container = new FreshIDRangesContainer();
+        Files.lines(ResourcesUtils.getResourcePath("day05/input_01"))
+                .forEach(container::addFreshRangeOrID);
+        List<Long> freshIDs = container.getFreshIDs();
+        List<Long> spoilIDs = container.getSpoilIDs();
+
+        System.out.println(freshIDs);
+        System.out.println(spoilIDs);
+        System.out.println("FRESH " + freshIDs.size());
+        System.out.println("SPOIL " + spoilIDs.size());
+
+        // System.out.println("POSSIBLE FRESH " +container.getPossibleFreshIDs().size());
+        // OutOfMemoryError: Java heap space
+
+        container.mergeFreshRanges();
+        System.out.println(container.getNumberOfPossibleFreshIDs());
     }
 
     static void day04() throws Exception {
