@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 @Log
-public class Range {
+public class InvalidIDRange {
 
     Long min;
     Long max;
@@ -20,7 +20,7 @@ public class Range {
     @Getter
     List<String> invalidIDS = new ArrayList<>();
 
-    public Range(String value) {
+    public InvalidIDRange(String value) {
         String[] both = value.split("-");
         minStr = both[0];
         maxStr = both[1];

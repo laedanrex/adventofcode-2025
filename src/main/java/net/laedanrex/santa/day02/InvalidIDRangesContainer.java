@@ -3,20 +3,20 @@ package net.laedanrex.santa.day02;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IDValidator {
+public class InvalidIDRangesContainer {
 
-    List<Range> ranges = new ArrayList<Range>();
+    List<InvalidIDRange> invalidIDRanges = new ArrayList<InvalidIDRange>();
 
 
     public void addRanges(String line) {
         String[] rangesStr = line.split(",");
         for (String rangeStr : rangesStr) {
-            ranges.add(new Range(rangeStr));
+            invalidIDRanges.add(new InvalidIDRange(rangeStr));
         }
     }
 
     public Long sumOfAllInvalid() {
-        return ranges.stream().mapToLong(Range::sumOfAllInvalid).sum();
+        return invalidIDRanges.stream().mapToLong(InvalidIDRange::sumOfAllInvalid).sum();
     }
 
     public void printSumOfAllInvalid() {
@@ -24,13 +24,13 @@ public class IDValidator {
     }
 
     public List<String> getAllInvalidIDS() {
-        return ranges.stream()
-                .flatMap(range -> range.getInvalidIDS().stream())
+        return invalidIDRanges.stream()
+                .flatMap(invalidIDRange -> invalidIDRange.getInvalidIDS().stream())
                 .toList();
     }
 
     public void printAllInvalidIDS() {
-        ranges.forEach(range -> System.out.println(range.getInvalidIDS()));
+        invalidIDRanges.forEach(invalidIDRange -> System.out.println(invalidIDRange.getInvalidIDS()));
     }
 
 
@@ -38,6 +38,6 @@ public class IDValidator {
     void printRanges() {
         //System.out.printf("         |    N°   |  0 HIT  | 0 LAND  \n");
         //System.out.printf("---------|---------|---------|---------\n");
-        ranges.forEach(System.out::println);
+        invalidIDRanges.forEach(System.out::println);
     }
 }

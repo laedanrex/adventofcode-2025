@@ -1,7 +1,7 @@
 package net.laedanrex.santa;
 
 import net.laedanrex.santa.day01.Counter;
-import net.laedanrex.santa.day02.IDValidator;
+import net.laedanrex.santa.day02.InvalidIDRangesContainer;
 import net.laedanrex.santa.day03.Banks;
 import net.laedanrex.santa.day04.PaperRollGrid;
 
@@ -34,7 +34,7 @@ public class Main {
     }
 
     static void day02() throws Exception {
-        IDValidator validator = new IDValidator();
+        InvalidIDRangesContainer validator = new InvalidIDRangesContainer();
         Files.lines(ResourcesUtils.getResourcePath("day02/input_01"))
                 .forEach(validator::addRanges);
         validator.printAllInvalidIDS();
