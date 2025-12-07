@@ -6,6 +6,7 @@ import net.laedanrex.adventcode.of2025.day03.BatteriesBanks;
 import net.laedanrex.adventcode.of2025.day04.PaperRollGrid;
 import net.laedanrex.adventcode.of2025.day05.FreshIDRangesContainer;
 import net.laedanrex.adventcode.of2025.day06.CephalopodCalculator;
+import net.laedanrex.adventcode.of2025.day07.TachyonBeamSplitting;
 
 import java.nio.file.Files;
 import java.time.LocalDateTime;
@@ -15,7 +16,18 @@ import java.util.List;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() throws Exception {
-        day06();
+        day07();
+    }
+
+    static void day07() throws Exception {
+        TachyonBeamSplitting beamSplitting = new TachyonBeamSplitting();
+        Files.lines(ResourcesUtils.getResourcePath("day07/input_01"))
+                .forEach(beamSplitting::addLine);
+
+       // System.out.println("SPLITS: " + beamSplitting.splits());
+
+        System.out.println("PATHS: " + beamSplitting.paths());
+
     }
 
     static void day06() throws Exception {

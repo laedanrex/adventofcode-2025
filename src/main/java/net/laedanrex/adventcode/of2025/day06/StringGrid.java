@@ -6,8 +6,8 @@ import java.util.List;
 
 public class StringGrid<T> {
     List<List<T>> grid = new ArrayList<>();
-    int sizeX = 0;
-    int sizeY = 0;
+    public int sizeX = 0;
+    public int sizeY = 0;
 
     void addLine(List<T> line) {
         grid.add(line);
@@ -15,27 +15,31 @@ public class StringGrid<T> {
         sizeX = line.size();
     }
 
-    void addLine(T[] line) {
+    public void addLine(T[] line) {
         addLine(Arrays.asList(line));
     }
 
-    T get(int x, int y) {
+    public T get(int x, int y) {
         return grid.get(y).get(x);
     }
 
-    List<T> getRow(int y) {
+    public T set(int x, int y, T value) {
+        return grid.get(y).set(x, value);
+    }
+
+    public List<T> getRow(int y) {
         return grid.get(y);
     }
 
-    List<T> getLastRow() {
+    public List<T> getLastRow() {
         return getRow(sizeY - 1);
     }
 
-    List<T> getColumn(int x) {
+    public List<T> getColumn(int x) {
         return grid.stream().map(l -> l.get(x)).toList();
     }
 
-    List<T> getLastColumn() {
+    public List<T> getLastColumn() {
         return getColumn(sizeX - 1);
     }
 
