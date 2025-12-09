@@ -7,6 +7,7 @@ import net.laedanrex.adventcode.of2025.day04.PaperRollGrid;
 import net.laedanrex.adventcode.of2025.day05.FreshIDRangesContainer;
 import net.laedanrex.adventcode.of2025.day06.CephalopodCalculator;
 import net.laedanrex.adventcode.of2025.day07.TachyonBeamSplitting;
+import net.laedanrex.adventcode.of2025.day08.JunctionBoxesGraph;
 
 import java.nio.file.Files;
 import java.time.LocalDateTime;
@@ -16,7 +17,15 @@ import java.util.List;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() throws Exception {
-        day07();
+        day08();
+    }
+
+    static void day08() throws Exception {
+        JunctionBoxesGraph junctionBoxesGraph = new JunctionBoxesGraph();
+        Files.lines(ResourcesUtils.getResourcePath("day08/input_01"))
+                .forEach(junctionBoxesGraph::addVector);
+        int result = junctionBoxesGraph.get3LargestsCircuitsMultiplication(null);
+        System.out.println(result);
     }
 
     static void day07() throws Exception {
@@ -24,7 +33,7 @@ public class Main {
         Files.lines(ResourcesUtils.getResourcePath("day07/input_01"))
                 .forEach(beamSplitting::addLine);
 
-       // System.out.println("SPLITS: " + beamSplitting.splits());
+        // System.out.println("SPLITS: " + beamSplitting.splits());
 
         System.out.println("PATHS: " + beamSplitting.paths());
 
